@@ -1,4 +1,4 @@
-# CB Vietnam Auditor Webapp Community
+# CB Auditor Webapp Community
 
 An open reference architecture for modern web-based conformity-assessment and ISO management-system auditing.
 
@@ -165,8 +165,8 @@ The repository currently defines the architecture and database baseline. A refer
 # Example future flow
 cp .env.example .env
 createdb nqa_auditor_community
-psql nqa_auditor_community < database/schema.sql
-psql nqa_auditor_community < database/seed-demo.sql
+psql cb_auditor_community < database/schema.sql
+psql cb_auditor_community < database/seed-demo.sql
 # install dependencies and start the future reference web application
 ```
 
