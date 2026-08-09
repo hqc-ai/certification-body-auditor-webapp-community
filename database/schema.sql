@@ -1,4 +1,4 @@
--- NQA Auditor Webapp Community
+-- CB Auditor Webapp Community
 -- PostgreSQL-compatible Phase 1 Community MVP reference schema.
 -- This is a community architecture baseline, not a production migration plan.
 
