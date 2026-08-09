@@ -4,9 +4,9 @@
 
 The Community Edition was transformed from three internal NQA Auditor Webapp architecture handoffs:
 
-1. `NQA_Auditor_Webapp_Phase_1A_ver09082026_Kiro_Architecture_Handoff`
-2. `NQA_Auditor_Webapp_Phase1B_ver09082026_Kiro_Architecture_Handoff`
-3. `NQA_Auditor_Webapp_Database_Data_Model_Architecture_Handoff_Phase1A_1B_ver09082026`
+1. `CB_Auditor_Webapp_Phase_1A_ver09082026_Kiro_Architecture_Handoff`
+2. `CB_Auditor_Webapp_Phase1B_ver09082026_Kiro_Architecture_Handoff`
+3. `CB_Auditor_Webapp_Database_Data_Model_Architecture_Handoff_Phase1A_1B_ver09082026`
 
 **Primary author / architecture lead**  
 Nguyễn Đăng Quang  
