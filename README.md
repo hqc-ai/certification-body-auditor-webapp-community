@@ -9,7 +9,7 @@ Nguyễn Đăng Quang
 Lead Auditor ISO/IEC 27001, ISO/IEC 42001, ISO/IEC 27701  
 Project Lead – AI Governance and AIMS Platform Development
 
-> Community Edition baseline: Phase 1 Community MVP, derived from the NQA Auditor Webapp Phase 1A, Phase 1B, and Database/Data Model architecture handoffs dated 09 August 2026.
+> Community Edition baseline: Phase 1 Community MVP, derived from the CB Auditor Webapp Phase 1A, Phase 1B, and Database/Data Model architecture handoffs dated 09 August 2026.
 
 ## Project Purpose
 
@@ -25,7 +25,7 @@ This architecture treats the **Audit** as the central operational aggregate whil
 
 ## Project Background
 
-The architecture originates from practical auditing experience, business analysis of auditor workflows, and the design of a modern web-based auditor platform for NQA Viet Nam. Research into existing auditing software informed general workflow lessons, but this Community Edition is independently described and intentionally excludes proprietary interfaces, screenshots, wording, source code, confidential identifiers, and protected implementation details from third parties.
+The architecture originates from practical auditing experience, business analysis of auditor workflows, and the design of a modern web-based auditor platform for Certification Body. Research into existing auditing software informed general workflow lessons, but this Community Edition is independently described and intentionally excludes proprietary interfaces, screenshots, wording, source code, confidential identifiers, and protected implementation details from third parties.
 
 ## Project Principles
 
@@ -131,7 +131,7 @@ See [Domain Model](docs/domain/domain-model.md), [Audit Lifecycle](docs/domain/a
 ## Repository Structure
 
 ```text
-NQA-Auditor-Webapp-Community/
+CB-Auditor-Webapp-Community/
 ├── README.md
 ├── assets/
 │   └── donate-qr.png          # added manually by project owner before publication
