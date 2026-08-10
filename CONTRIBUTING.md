@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for considering a contribution to NQA Auditor Webapp Community.
+Thank you for considering a contribution to CB Auditor Webapp Community.
 
 **Primary author / architecture lead**  
 Nguyễn Đăng Quang  
