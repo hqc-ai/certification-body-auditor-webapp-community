@@ -22,4 +22,4 @@ The Community Edition is intended to contain independently written architecture,
 
 ## Names and Marks
 
-“NQA Viet Nam” and project/author identification are attribution and project-identity statements. Publication under an open-source license does not automatically grant rights to use organizational names, logos, or marks beyond what the project owner explicitly authorizes.
+“Nguyen Dang Quang” and project/author identification are attribution and project-identity statements. Publication under an open-source license does not automatically grant rights to use organizational names, logos, or marks beyond what the project owner explicitly authorizes.
