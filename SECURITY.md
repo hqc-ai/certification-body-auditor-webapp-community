@@ -3,7 +3,7 @@
 **Primary author / architecture lead**  
 Nguyễn Đăng Quang  
 Lead Auditor ISO/IEC 27001, ISO/IEC 42001, ISO/IEC 27701  
-Project Lead – AI Governance and AIMS Platform Development  
+Project Lead – AI Governance & AIMS Platform Development  
 NQA Viet Nam
 
 ## Scope
