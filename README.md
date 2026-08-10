@@ -1,4 +1,4 @@
-<img width="468" height="33" alt="image" src="https://github.com/user-attachments/assets/024187ef-058f-48cc-8d9a-bb8c2fd5091a" /># CB Auditor Webapp Community
+# CB Auditor Webapp Community
 
 > An open reference architecture and experimental implementation model for modern web-based conformity-assessment and ISO management-system auditing workflows.
 
