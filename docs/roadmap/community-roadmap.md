@@ -1,81 +1,109 @@
 # Community Roadmap
 
-**Primary author / architecture lead**  
-Nguyễn Đăng Quang  
-Lead Auditor ISO/IEC 27001, ISO/IEC 42001, ISO/IEC 27701  
-Project Lead – AI Governance and AIMS Platform Development  
-NQA Viet Nam
+This roadmap describes proposed Community Edition development stages. Architecture documentation and implemented software may progress at different speeds.
 
-This roadmap is a proposal for staged community development. Later phases are not commitments or claims of existing implementation.
+## Community Phase 1 — Auditing Workflow Baseline
 
-## Phase 1 – Core Auditor Workspace
+### Phase 1A — Application Foundation
 
-Goal: demonstrate the full structured audit workflow and relational model with a simple web-first implementation.
+- Audit List / Work Queue.
+- Audit metadata.
+- Organization/site/scheme relationships.
+- Audit assignment baseline.
+- Multi-site and multi-scheme-ready schema.
+- Auditor/internal vs customer visibility boundary.
 
-Candidate deliverables:
-- Audit List and audit shell
-- organization/site/scheme/assignment data
-- focus areas
-- findings and evidence
-- finding response/follow-up lifecycle
-- management summary
-- conclusions and statements
-- customer-safe web output
-- report snapshot model
-- readiness/completion validation
-- PostgreSQL schema and demo seed data
+### Phase 1B — Auditor Workspace
 
-## Phase 2 – Authentication and Multi-user Operation
+- Audit Overview.
+- Focus Areas.
+- Findings.
+- Evidence.
+- Management Summary.
+- Conclusions.
+- Statements.
+- Audit Completion.
+- Structured reporting.
+- Follow-up architecture.
+- Technical Review hooks.
 
-Candidate deliverables:
-- user accounts / identity-provider integration
-- role and permission model
-- auditor/customer/reviewer access control
-- optimistic locking/versioning for collaborative edits
-- activity/audit logging improvements
-- secure object-storage upload/download flows
+### Phase 1C — CB Operations & Customer Portal
 
-## Phase 3 – Customer Portal
+- User / role domain.
+- Audit-specific role assignments.
+- Reviewer dashboard and review cycle.
+- Certification Decision workflow.
+- Planner / coordination queues.
+- Customer Portal authorization.
+- Customer corrective-action response and evidence.
+- Document publication model.
+- Manual reminders / notifications.
+- Workflow history.
+- Segregation of duties.
 
-Candidate deliverables:
-- customer identity and organization membership
-- published findings and response submission
-- evidence upload for corrective-action response
-- released audit outputs
-- notification hooks
-- strict customer-safe DTO/API boundary
+**Phase 1 principle:** demonstrate the complete data and workflow architecture without requiring full enterprise identity or integration infrastructure.
 
-## Phase 4 – Technical Review and Certification Workflow
+## Phase 2 — Identity & Multi-User Hardening
 
-Candidate deliverables:
-- technical-review queue and independent review records
-- review findings/reversion logic where required
-- certification recommendation package
-- proposed vs approved scope/change governance
-- integration extension points to an external certification management system
+Proposed:
 
-Certification decisions remain controlled professional/governance processes and are not inferred automatically from audit completion.
+- authentication;
+- SSO / identity-provider integration;
+- production RBAC;
+- session management;
+- invitation workflow;
+- stronger tenant/customer isolation;
+- permission administration;
+- audit access policy tests.
 
-## Phase 5 – AI-assisted Auditing
+## Phase 3 — Workflow Automation & Integration
 
-Candidate deliverables:
-- finding draft assistance from auditor notes/evidence
-- statement and summary drafting
-- consistency and missing-evidence checks
-- explicit AI provenance records
-- human approval gates
-- model/prompt version traceability
+Proposed:
 
-AI supports auditors; it does not replace professional judgement or make autonomous certification decisions.
+- scheduled reminders;
+- email notification adapters;
+- configurable SLA/ageing rules;
+- certification management integration;
+- certificate rendering;
+- scheme-specific checklist configuration;
+- document signing integration points;
+- API/webhook integration.
 
-## Phase 6 – Analytics, Audit Intelligence, and Organizational Knowledge
+## Phase 4 — Responsible AI-Assisted Auditing
 
-Candidate deliverables:
-- cross-audit finding trends
-- focus-area and statement history
-- organization/site risk and performance views
-- audit knowledge reuse
-- reusable evidence/reference patterns
-- governed retrieval/knowledge assistance
+Proposed:
 
-Analytics should remain downstream from stable operational workflows and should not distort the source audit data model.
+- finding draft assistance;
+- statement drafting;
+- evidence-to-finding traceability assistance;
+- report consistency checks;
+- missing-evidence warnings;
+- review completeness assistance;
+- retrieval over approved audit knowledge.
+
+AI remains advisory. Human review and acceptance are mandatory.
+
+## Phase 5 — Analytics & Audit Intelligence
+
+Proposed:
+
+- finding trends;
+- recurrence analysis;
+- audit effort analysis;
+- review ageing;
+- corrective-action cycle time;
+- organization-level knowledge reuse;
+- anonymized benchmarking where legally and contractually appropriate.
+
+## Phase 6 — Advanced Governance
+
+Possible future research:
+
+- competence eligibility engine;
+- scheme/accreditation rule packs;
+- multi-entity Certification Body structures;
+- advanced privacy/governance controls;
+- immutable evidence provenance patterns;
+- policy-as-code for workflow gates.
+
+These later items are proposals, not claims of implemented capability.
