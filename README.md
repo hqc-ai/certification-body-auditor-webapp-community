@@ -1,4 +1,4 @@
-# CB Auditor Webapp Community
+<img width="468" height="33" alt="image" src="https://github.com/user-attachments/assets/024187ef-058f-48cc-8d9a-bb8c2fd5091a" /># CB Auditor Webapp Community
 
 > An open reference architecture and experimental implementation model for modern web-based conformity-assessment and ISO management-system auditing workflows.
 
@@ -524,10 +524,27 @@ Community support helps with:
 ### Donate
 
 <!-- The project owner may add the donation QR image before publication. -->
+
+### Bank transfer — Vietnam & International
+
+- **Bank:** Shinhan Bank Vietnam
+- **Account holder:** NGUYEN DANG QUANG
+- **Account number:** `0944659937`
+- SWIFT/BIC: `SHBKVNVX`
+- **Transfer reference:** `DONATE CB Auditor Webapp`
+
 <p align="center">
-  <img src="assets/donate-qr.png"
-       alt="Support CB Auditor Webapp Community"
-       width="280">
+  <img src="assets/donate/bank-qr.jpg" alt="CB Auditor Webapp Community bank transfer QR code" width="300">
+</p>
+
+### USDT — TRON (TRC20)
+
+- **Asset:** Tether — USDT
+- **Network:** TRON — TRC20
+- **Receiving address:** `TPNDgQnemyVjjhAuwSPSJz37BCaQrUkaj9`
+
+<p align="center">
+  <img src="assets/donate/usdt-qr-trx.jpg" alt="CB Auditor Webapp Community USDT TRC20 donation QR code" width="300">
 </p>
 
 **Thank you for supporting the development of open tools for the auditing and conformity-assessment community.**
