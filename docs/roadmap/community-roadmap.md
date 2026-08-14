@@ -27,19 +27,33 @@ This roadmap describes proposed Community Edition development stages. Architectu
 - Follow-up architecture.
 - Technical Review hooks.
 
-### Phase 1C — CB Operations & Customer Portal
+### Phase 1C — CB Operations
 
 - User / role domain.
 - Audit-specific role assignments.
 - Reviewer dashboard and review cycle.
 - Certification Decision workflow.
 - Planner / coordination queues.
-- Customer Portal authorization.
-- Customer corrective-action response and evidence.
+- CB-side customer access enablement.
+- Customer corrective-action review and publication controls.
 - Document publication model.
 - Manual reminders / notifications.
 - Workflow history.
 - Segregation of duties.
+
+### Phase 1D — Customer Portal
+
+- Customer web portal and customer identity boundary.
+- Email-linked customer user access.
+- Multi-organization membership model.
+- Organization, service and site scoped authorization.
+- Overview / My Services dashboard.
+- Year-based Schedule / Audit / Findings / Certificates progress.
+- Upcoming audit calendar projection.
+- Customer findings and corrective-action submission.
+- Customer-visible certificates and published documents.
+- Saved portal filters / preferences.
+- Contracts, Financials and Trainings as integration-ready extension boundaries.
 
 **Phase 1 principle:** demonstrate the complete data and workflow architecture without requiring full enterprise identity or integration infrastructure.
 

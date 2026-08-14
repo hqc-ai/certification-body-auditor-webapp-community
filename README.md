@@ -12,7 +12,7 @@ Project Lead – AI Governance and AIMS Platform Development
 ![Community Edition](https://img.shields.io/badge/Edition-Community-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-Web--first-informational)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-336791)
-![Phase](https://img.shields.io/badge/Phase-1A%20%7C%201B%20%7C%201C-success)
+![Phase](https://img.shields.io/badge/Phase-1A%20%7C%201B%20%7C%201C%20%7C%201D-success)
 
 ---
 
@@ -58,13 +58,14 @@ The design aims to improve:
 
 # Community Architecture Baseline
 
-The current Community baseline consists of three connected sub-phases.
+The current Community baseline consists of four connected sub-phases.
 
 | Phase | Purpose | Main actors | Community status |
 |---|---|---|---|
 | **Phase 1A** | Application shell, audit list and core audit metadata | Auditor | Baseline |
 | **Phase 1B** | Detailed audit execution workspace | Auditor, Lead Auditor | Baseline |
-| **Phase 1C** | CB operations and controlled customer interaction | Reviewer, Certification Decision, Planner, Customer | **Added to Community baseline** |
+| **Phase 1C** | CB operations, review, certification decision and coordination | Reviewer, Certification Decision, Planner / Coordinator | Baseline |
+| **Phase 1D** | Customer web portal, customer identity and customer-scoped service views | Customer Representative | **Added to Community baseline** |
 
 ## Phase 1A — Application Foundation
 
@@ -99,9 +100,9 @@ Phase 1B provides the structured audit execution workspace:
 
 AI may assist with drafting or consistency checks, but AI output remains non-authoritative until reviewed and accepted by an auditor.
 
-## Phase 1C — CB Operations & Customer Portal
+## Phase 1C — CB Operations
 
-Phase 1C extends the same audit record into post-audit Certification Body operations and controlled customer interaction.
+Phase 1C extends the same audit record into post-audit Certification Body operations and governed downstream workflow.
 
 It adds:
 
@@ -109,15 +110,32 @@ It adds:
 - Reviewer / Technical Review workflow;
 - Certification Decision workflow;
 - Planner / Audit Coordinator workflow;
-- Customer Portal authorization;
-- versioned customer corrective-action responses;
-- evidence upload for corrective actions;
+- CB-side customer access enablement;
+- versioned customer corrective-action review;
+- controlled customer publication;
 - controlled document publication;
 - manual reminders and notification records;
 - workflow history and audit trails;
 - segregation-of-duties rules.
 
-**Core Phase 1C principle:** there is still one Audit object and one primary data model. Reviewer, decision maker, planner and customer experiences are projections over the same governed business records; audit data is not copied into separate role-specific systems.
+**Core Phase 1C principle:** there is still one Audit object and one primary data model. Reviewer, decision maker and planner experiences are projections over the same governed business records; audit data is not copied into separate role-specific systems.
+
+## Phase 1D — Customer Portal
+
+Phase 1D promotes the customer-facing experience into a first-class web application boundary. It adds:
+
+- email-linked customer portal identity;
+- organization membership and customer-scoped authorization;
+- optional site and service access scopes;
+- Overview / My Services dashboard;
+- company, service, site and year filtering;
+- Schedule / Audit / Findings / Certificates progress views;
+- upcoming-audit calendar projection;
+- customer corrective-action submission and evidence;
+- customer-visible certificate and document projections;
+- integration-ready boundaries for Contracts, Financials and Trainings.
+
+**Core Phase 1D principle:** the Customer Portal is not a second audit database. It is an external, customer-scoped projection over governed audit, certification, publication and corrective-action records.
 
 ---
 
@@ -129,7 +147,7 @@ flowchart TB
 
     UI --> AW["Auditor Workspace<br/>Phase 1A / 1B"]
     UI --> CBW["CB Staff Workspace<br/>Phase 1C"]
-    UI --> CP["Customer Portal<br/>Phase 1C"]
+    UI --> CP["Customer Portal Web App<br/>Phase 1D"]
 
     CBW --> PL["Planner / Coordinator"]
     CBW --> RV["Reviewer"]
@@ -241,7 +259,7 @@ Submitted responses are versioned. Customers cannot modify the auditor's finding
 | Reviewer Workspace | Independent technical review | Reviewer |
 | Certification Decision | Independent certification decision checkpoint | Decision Maker |
 | Planner Workspace | Scheduling, assignments, publication and reminders | Planner |
-| Customer Portal | Restricted customer-specific audit projection | Customer |
+| Customer Portal | Customer-scoped services, schedule, audits, findings, certificates and published content | Customer |
 | Document Publication | Explicit internal/customer publication state | Planner / configured role |
 | Audit Trail | Append-only workflow traceability | System |
 | AI Assist | Draft/check support with human acceptance | Auditor |
@@ -311,6 +329,15 @@ erDiagram
     CONTACTS ||--o{ CUSTOMER_PORTAL_ACCESS : authorizes
     ORGANIZATIONS ||--o{ CUSTOMER_PORTAL_ACCESS : scopes
 
+    ORGANIZATIONS ||--o{ SERVICE_ENGAGEMENTS : receives
+    SCHEMES ||--o{ SERVICE_ENGAGEMENTS : defines
+    SERVICE_ENGAGEMENTS ||--o{ SERVICE_CYCLES : has
+    SERVICE_CYCLES ||--o{ AUDIT_SERVICE_CYCLES : groups
+    AUDITS ||--o{ AUDIT_SERVICE_CYCLES : participates
+    SERVICE_ENGAGEMENTS ||--o{ AUDIT_SCHEDULE_EVENTS : schedules
+    CUSTOMER_PORTAL_ACCESS ||--o{ CUSTOMER_PORTAL_SITE_ACCESS : limits
+    CUSTOMER_PORTAL_ACCESS ||--o{ CUSTOMER_PORTAL_SERVICE_ACCESS : limits
+
     AUDITS ||--o{ AUDIT_STATUS_HISTORY : traces
     FINDINGS ||--o{ FINDING_STATUS_HISTORY : traces
 ```
@@ -321,6 +348,9 @@ See:
 - [Phase 1B Audit Workspace Architecture](docs/architecture/phase-1b-audit-workspace-architecture.md)
 - [Phase 1C CB Operations & Customer Portal](docs/architecture/phase-1c-cb-operations-customer-portal.md)
 - [Phase 1C Data Model Extension](docs/architecture/phase-1c-data-model-extension.md)
+- [Phase 1D Customer Portal Architecture](docs/architecture/phase-1d-customer-portal-architecture.md)
+- [Phase 1D Data Model Extension](docs/architecture/phase-1d-data-model-extension.md)
+- [Phase 1D Customer Portal Domain](docs/domain/phase-1d-customer-portal-domain.md)
 - [Role & Permission Model](docs/domain/role-permission-model.md)
 - [Review & Certification Workflow](docs/domain/review-certification-workflow.md)
 - [Customer Portal Model](docs/domain/customer-portal-model.md)
@@ -342,6 +372,8 @@ certification-body-auditor-webapp-community/
 │   │   ├── phase-1b-audit-workspace-architecture.md
 │   │   ├── phase-1c-cb-operations-customer-portal.md
 │   │   ├── phase-1c-data-model-extension.md
+│   │   ├── phase-1d-customer-portal-architecture.md
+│   │   ├── phase-1d-data-model-extension.md
 │   │   └── database-data-model-architecture.md
 │   │
 │   ├── domain/
@@ -351,7 +383,8 @@ certification-body-auditor-webapp-community/
 │   │   ├── report-model.md
 │   │   ├── role-permission-model.md
 │   │   ├── review-certification-workflow.md
-│   │   └── customer-portal-model.md
+│   │   ├── customer-portal-model.md
+│   │   └── phase-1d-customer-portal-domain.md
 │   │
 │   └── roadmap/
 │       └── community-roadmap.md
@@ -359,8 +392,10 @@ certification-body-auditor-webapp-community/
 ├── database/
 │   ├── schema.sql
 │   ├── phase-1c-extension.sql
+│   ├── phase-1d-extension.sql
 │   ├── seed-demo.sql
-│   └── ERD.md
+│   ├── ERD.md
+│   └── PHASE_1D_ERD.md
 │
 ├── CONTRIBUTING.md
 ├── SECURITY.md
@@ -372,7 +407,7 @@ certification-body-auditor-webapp-community/
 
 ---
 
-## Phase 1C API Boundary
+## Phase 1C / 1D API Boundary
 
 The following resource shapes are architectural guidance rather than a final API contract.
 
@@ -384,7 +419,7 @@ The following resource shapes are architectural guidance rather than a final API
 | Certification Decision | `/decisions` | Independent certification decision |
 | Findings | `/findings`, `/responses` | Findings and customer corrective action |
 | Documents | `/documents`, `/publications` | File metadata and controlled publication |
-| Portal | `/portal/audits`, `/portal/findings` | Customer-scoped projections |
+| Portal | `/portal/overview`, `/portal/services`, `/portal/schedule`, `/portal/audits`, `/portal/findings`, `/portal/certificates` | Customer-scoped Phase 1D projections |
 | Notifications | `/notifications`, `/reminders` | In-app notification and reminder events |
 
 Customer Portal endpoints must enforce server-side organization/audit authorization and must not rely on UI hiding for confidentiality.
@@ -413,6 +448,10 @@ The Community Phase 1 baseline now demonstrates the architecture for:
 16. Controlled document publication
 17. Audit and finding history
 18. Core relational database and data model
+19. Customer Overview / My Services projection
+20. Customer organization, site and service access scopes
+21. Customer schedule and upcoming-audit projection
+22. Customer certificate projection
 
 The Community MVP may use simplified or seeded identities. Production authentication, identity federation and enterprise integrations are deferred.
 
@@ -461,19 +500,20 @@ For an existing Phase 1A/1B database, apply the Community Phase 1C reference ext
 
 ```bash
 psql <database> < database/phase-1c-extension.sql
+psql <database> < database/phase-1d-extension.sql
 ```
 
-This file is an architecture-oriented reference migration. Review and adapt it before production use.
+These files are architecture-oriented reference migrations. Review and adapt them before production use.
 
 ---
 
 ## Current Development Status
 
-**Status:** Community architecture baseline — Phase 1A + Phase 1B + Phase 1C.
+**Status:** Community architecture baseline — Phase 1A + Phase 1B + Phase 1C + Phase 1D.
 
 The repository documents the domain architecture and relational model. It does not claim that every documented module has been implemented as production software.
 
-Phase 1C promotes Reviewer, Certification Decision, Planner and Customer Portal concepts into the Community architecture baseline while keeping authentication and enterprise integration deliberately lightweight for demonstration purposes.
+Phase 1C establishes Reviewer, Certification Decision and Planner / Coordinator operations. Phase 1D promotes the Customer Portal, customer identity boundary, service aggregation and customer-scoped projections into the Community architecture baseline while keeping production identity federation and enterprise integration deliberately lightweight for demonstration purposes.
 
 ---
 
